@@ -56,7 +56,7 @@ var ESCAPE_NULL = {
 	JSONEachRow: "\\N",
 };
 
-const R_ERROR = new RegExp('(Code|Error): ([0-9]{2})[,.] .*Exception: (.+?)$', 'm');
+const R_ERROR = new RegExp('(Code|Error): .*Exception: (.+?)$', 'm');
 
 const URI = 'localhost';
 
