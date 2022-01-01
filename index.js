@@ -490,7 +490,8 @@ class QueryCursor {
 			}
 			
 			// Hack for Sequelize ORM
-			query = query.trim().trimEnd().replace(/;$/gm, "");
+			// query = query.trim().trimEnd().replace(/;$/gm, "");
+			query = query.trim().trimEnd().replace(/(--[^\n]*)/g, '').replace(/\s+/g, ' ').replace(/;$/gm, '').trim().trimEnd()
 			
 			if (query.match(/^(select|show|exists)/i)) {
 				if ( ! R_FORMAT_PARSER.test(query)) {
