@@ -718,9 +718,11 @@ class QueryCursor {
 				})
 				.on('header', header => {
 					metaData = _.merge({}, header);
+					console.log('metaData header: ': metaData)
 				})
 				.on('footer', footer => {
 					rs.emit('meta', _.merge(metaData, footer));
+					console.log('metaData footer: ': metaData)
 				})
 				.on('data', function (data) {
 					rs.emit('data', data);
